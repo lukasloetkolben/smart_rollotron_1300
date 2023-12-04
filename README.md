@@ -1,1 +1,7 @@
-# smart_rollotron_1300
+
+Nachricht kommend vom Motor:
+
+A.   B.   C.   D.   E.   F.   G.   H.   I.  
+0x02 0x05 0x41 0xEE 0x50 0x00 0x57 0xD6 0x03 
+
+G = Stand des Rolladen von 0x00 (oben) bis 0x06 (unten)
