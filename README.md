@@ -1,7 +1,15 @@
+# Rollotron 1300 Reverse Engineering
 
-Nachricht kommend vom Motor:
+> [!WARNING]  
+> This project is a work in progress. 
+> Core functionalities are operational, and additional content, including images and code examples, will be added soon.
 
-A.   B.   C.   D.   E.   F.   G.   H.   I.  
-0x02 0x05 0x41 0xEE 0x50 0x00 0x57 0xD6 0x03 
+## Easy to use!
+This project aims to reverse engineer the Rollotron 1300, a roller shutter control system manufactured by Rademacher. 
+The primary goal is to make it compatible with smart home systems using ESP32, ESP8266, and similar platforms. 
+The motivation behind this project is to add smart home functionality to existing Rollotron 1300 units that do not originally support such features.
 
-G = Stand des Rolladen von 0x00 (oben) bis 0x06 (unten)
+<div style="text-align:center;">
+
+![](./images/pcb_serial_pins.png)
+</div>
