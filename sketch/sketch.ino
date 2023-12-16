@@ -1,8 +1,8 @@
 #include <SoftwareSerial.h>
 
 // Pins Rx D5 (14) and Tx D6(12)
-#define TX_PIN 12
-#define RX_PIN 14
+#define TX_PIN 1
+#define RX_PIN 2
 #define baudrate 9600
 
 SoftwareSerial uart(RX_PIN, TX_PIN);
@@ -26,6 +26,8 @@ long currentPosition = 0;  // Current position of the shutter
 
 void setup() {
   Serial.begin(9600);
+
+  down();
 }
 
 void uartStop() {
@@ -81,11 +83,11 @@ void readStatus() {
           // Postion
           currentPosition = response[6];
 
-          if (currentPosition > maxPostion) {
-            maxPostion = position;
+          if (currentPosition > maxPosition) {
+            maxPosition = currentPosition;
           }
-          if (currentPosition < minPostion) {
-            minPostion = position;
+          if (currentPosition < minPosition) {
+            minPosition = currentPosition;
           }
 
           // Open / Close
@@ -128,8 +130,8 @@ void loop() {
   readStatus();
   delay(500);
 
-  if (maxPostion > minPostion) {
-    float percentage = map(currentPosition, minPostion, maxPostion, 0, 100);
+  if (maxPosition > minPosition) {
+    float percentage = map(currentPosition, minPosition, maxPosition, 0, 100);
     Serial.print("Current position: ");
     Serial.print(percentage);
     Serial.println("%");
